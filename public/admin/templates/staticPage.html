@@ -1,0 +1,76 @@
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Page
+            <small>Static Page</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/userList"><i class="fa fa-dashboard"></i> Page</a></li>
+            <li class="active">Static Page</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-11">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Page</h3>
+                    </div>
+                        <div class="form-group">
+                        <div class="alert alert-success" ng-show="message">
+                            <strong ng-bind="message" ></strong> 
+                        </div>
+                    </div>
+                    <form method="post"  ng-submit="addPage(post)">
+                        <div class="box-body">
+                            
+                            
+                            <div class='col-lg-8'>
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Title</label>
+                                    <input type='text' placeholder='Title' ng-model='post.title' required="" name='title' class='form-control'>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Description</label>
+                                    <textarea required="" class="form-control full-height" id="pad" ng-model='post.description' name="description" placeholder='Write your description'></textarea>
+                                
+                                </div>
+                            </div>
+                            
+                            
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Type</label> <br>                 
+                                        <select name="list" id="personlist" ng-model="post.type">
+                                              <option value="About us">About us</option>
+                                              <option value="Privacy Policy">privacy policy</option>
+                                              <option value="Terms And Conditions">terms and conditions</option>
+                                        </select>
+                                </div>
+                            </div>
+                            
+             
+
+                            <div class="col-lg-8">
+                                    <span id="mydiv">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                <input type="submit" value="Publish Post" name="submit" class="btn btn-success pull-right">                               
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

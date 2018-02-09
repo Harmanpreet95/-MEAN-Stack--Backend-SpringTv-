@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" ng-app='fwrk.home' ng-controller="PayStatusCtrl">
+    <head>
+        <meta charset="utf-8">
+        <title>Spring Tv</title>
+        <meta name="description" content="ghost clone javascript blog node.js angular.js">
+        <meta name="author" content="Connor Leech">
+        <link href="/home/css/bootstrap.min.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <script src="https://www.paypalobjects.com/api/checkout.js"></script>-->
+        <link href="/home/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/home/css/style.css" rel="stylesheet">
+        </head>
+    <body>
+        <!-- Main Content -->
+        <div class="sign_cover">
+        <div ng-include='"/home/templates/headersss.html"'></div>
+        <div ng-include='"/home/templates/paystatus.html"'></div>
+         </div>
+        <div ng-include='"/home/templates/footer_secondry.html"'></div>
+       
+        
+           
+         
+         <script src="/home/js/jquery-1.11.3.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <!-- Angular Material Dependencies -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!-- UI Router -->
+        <script src="https://cdn.jsdelivr.net/npm/angular-ui-router@0.4.3/release/angular-ui-router.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+        <!-- Angular Material -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+        
+        <!-- Custom JS -->
+         <script src='/home/js/app.js'></script>
+        <script src='/home/js/controllers/user.js'></script>
+        <script src='/home/js/controllers/video.js'></script>
+         <script src='/home/js/controllers/serial.js'></script>
+          <script src='/home/js/controllers/news.js'></script>
+           <script src='/home/js/controllers/team.js'></script>
+           <script src='/common/modules/orders.js'></script>
+          <script src='/common/modules/teams.js'></script>
+         <script src='/common/modules/news.js'></script>
+          <script src='/common/modules/actors.js'></script>
+          <script src='/home/js/controllers/page.js'></script>
+          <script src='/home/js/controllers/plan.js'></script>
+            <script src='/common/modules/pages.js'></script>
+             <script src='/common/modules/rates.js'></script>
+        <script src='/common/modules/users.js'></script>
+          <script src='/common/modules/plans.js'></script>
+           <script src='/common/modules/payments.js'></script>
+           <script src='/common/modules/paymentstatus.js'></script>
+          <script src='/common/modules/videos.js'></script>
+          <script src='/common/modules/serials.js'></script>
+                     <script src='/common/modules/seasons.js'></script>
+                     <script src='/common/modules/categories.js'></script>
+                <script src='/common/modules/subcategory.js'></script>
+ <script src='/common/modules/episodes.js'></script>
+
+<!--     jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+<!--     Include all compiled plugins (below), or include individual files as needed -->
+ 
+  <script src="/home/js/jquery-1.11.3.min.js"></script>
+     <script src="/home/js/bootstrap.min.js"></script>
+     <script type='text/javascript'>
+        var currentUser = <%- JSON.stringify(user); %> ;
+        app.run(function($rootScope) {
+            $rootScope.currentUser = currentUser;
+            console.log($rootScope.currentUser);
+        });
+       </script>
+  	<!--main-cover-end--->
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5a437e9af4461b0b4ef8ad1f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+     
+    </body>
+</html>

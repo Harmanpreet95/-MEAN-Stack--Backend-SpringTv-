@@ -1,0 +1,192 @@
+<div class="account" >
+    <div class="container">
+        <div class="row">
+            <div class="edit">
+                <div class="col-sm-12">
+                    <h3 class="account-txt">Your  Order Payment Status</h3>
+                </div>
+            </div>
+        </div>
+        <div class="grid-acnt">
+            <div class="row">
+                <div class="account-page">
+                    <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Transaction ID :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.transactionid}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Item ID :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.movie_id}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Item Name :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.movie_name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Item Quantity :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.quantity}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Total Price :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.movie_price}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">User ID :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.userid}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Status :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.status}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="col-sm-12">
+                        <div class="account-page">
+                            <div class="col-sm-6">
+                                <label class="usr_nm">Payment Method :</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{pay.paymentmethod}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      </div> 
+    
+<div class="edit">
+ <div class="col-sm-12">
+                    <h3 class="account-txt">Billing Address :</h3>
+                </div>
+
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="edit_form">
+<form>
+<div class="input-group">
+  <input type="text" class="form-control" required="required" ng-model='billing.b_name' name='b_name' placeholder="Name" >
+</div>
+
+<div class="input-group">
+  <input type="number" required="required" class="form-control" ng-model='billing.b_phone' name='b_phone' placeholder="Phone Number" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control"  ng-model='billing.b_address' name='b_address' placeholder="Address" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control"  ng-model='billing.b_city' name='b_city' placeholder="City" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.b_state' name='b_state' placeholder="State" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.b_country' name='b_country' placeholder="Country" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.b_zip' name='b_zip' placeholder="Zip/Postal code" >
+</div></form></div></div></div>
+
+<div class="edit">
+  <div class="col-sm-12">
+    <h3 class="account-txt">Shipping Address :</h3>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="edit_form">
+<form>
+<div class="input-group">
+  <input type="text" class="form-control" ng-model='billing.s_name' name='s_name' placeholder="Name" >
+</div>
+
+<div class="input-group">
+  <input type="number" required="required" class="form-control" ng-model='billing.s_phone' name='s_phone' placeholder="Phone Number" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control"  ng-model='billing.s_address' name='s_address' placeholder="Address" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control"  ng-model='billing.s_city' name='s_city' placeholder="City" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.s_state' name='s_state' placeholder="State" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.s_country' name='s_country' placeholder="Country" >
+</div>
+<div class="input-group">
+  <input type="text" required="required" class="form-control" ng-model='billing.s_zip' name='s_zip' placeholder="Zip/Postal code" >
+</div>
+    <div class="profile-btn">
+  <button type="button" class="btn btn-primary btn-block" ng-click="ship()">Submit</button></div>
+</form>
+    </div>
+</div></div>
+    </div>   

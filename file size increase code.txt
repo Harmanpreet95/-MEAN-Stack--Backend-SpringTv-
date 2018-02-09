@@ -1,0 +1,14 @@
+Host : ec2-18-220-250-162.us-east-2.compute.amazonaws.com
+User : ec2-user
+
+cd /
+cd etc/nginx/conf.d
+sudo nano 00_elastic_beanstalk_proxy.conf
+client_max_body_size 5000M;
+sudo service nginx reload
+
+
+
+for file permissions
+
+sudo chmod -R 777 /var/app/current

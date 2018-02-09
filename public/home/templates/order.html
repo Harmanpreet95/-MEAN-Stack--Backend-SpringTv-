@@ -1,0 +1,165 @@
+<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:350px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('home/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:350px;overflow:hidden;">
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Full Width Slider</a>
+            <div>
+                <img data-u="image" src="home/img/serial_sldr.jpg" />
+                             <div href="#" class="sral_ovrly">
+                            	</div>
+                
+<!--                <div style="position:absolute;top:100px;left:90px;width:150px;height:150px;z-index:0;font-size:50px;color:#ffffff;line-height:60px; border:1px solid #000; "><img src="home/img/slidr_abs.jpg" class="sldr_pc">
+                 <div href="#" class="slipc_ovrly">
+                            	</div>
+                </div>-->
+               
+                <div style="position:absolute;top:140px;left:460px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content</div>
+                           
+
+            </div>
+            <div>
+                <img data-u="image" src="home/img/serial_sldr.jpg" />
+                             <div href="#" class="sral_ovrly">
+                            	</div>
+                
+<!--                <div style="position:absolute;top:100px;left:90px;width:150px;height:150px;z-index:0;font-size:50px;color:#ffffff;line-height:60px; border:1px solid #000; "><img src="home/img/slidr_abs.jpg" class="sldr_pc">
+                 <div href="#" class="slipc_ovrly">
+                            	</div>
+                </div>-->
+               
+                <div style="position:absolute;top:140px;left:460px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content</div>
+                           
+
+            </div>
+            <div>
+                <img data-u="image" src="home/img/serial_sldr.jpg" />
+                             <div href="#" class="sral_ovrly">
+                            	</div>
+                
+<!--                <div style="position:absolute;top:100px;left:90px;width:150px;height:150px;z-index:0;font-size:50px;color:#ffffff;line-height:60px; border:1px solid #000; "><img src="home/img/slidr_abs.jpg" class="sldr_pc">
+                 <div href="#" class="slipc_ovrly">
+                            	</div>
+                </div>-->
+               
+                <div style="position:absolute;top:140px;left:460px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content</div>
+                           
+
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
+    </div>
+<!--------tv-end--------------->
+
+<!----------tv_div-section------------->
+<div class="tv_section">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-4">
+                              <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" ng-model="video.search"  placeholder="Search" >
+                    <span class="input-group-addon">
+                        <button type="submit" id="search" ng-click='search()'>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div> 
+                        </div>
+                        <div class="col-sm-8">
+             <div class="head_tv">
+             	<h3>Order Now</h3>
+             </div></div></div>
+            	<div class="tv_wrp" id="movie">
+                	<div class="col-sm-3" ng-repeat="mov in movie">
+                    	<div class="tv_lyer">
+                        	<img src="{{mov.thumbnail}}">
+                              <a href="/movie_detail/{{mov._id}}" class="actr_ovrly">
+                            	</a>
+                            </div>
+                            <div class="ordr_dtl">
+                            <h4>{{mov.title}}</h4>
+                            <h5>${{mov.price}}</h5>
+                             <button type="button" class="btn btn-default btn_lgn crt_set"><a ng-click="buy(mov._id)">Buy Now</a></button>
+                            	</div>
+                    	</div>
+                        <div class="col-sm-3" ng-repeat="mov in serials">
+                    	<div class="tv_lyer">
+                        	<img src="{{mov.thumbnail}}">
+                              <a href="/episode_detail/{{mov._id}}" class="actr_ovrly">
+                            	</a>
+                            </div>
+                            <div class="ordr_dtl">
+                            <h4>{{mov.title}}</h4>
+                          <div class="head_tv tv_cnt">
+             <select ng-model="score"   ng-change="viewseason(score)" ng-options="score as score.season_name for score in  season" ng-selected="selected" style="cursor: pointer" id="tvsession">
+            <option value="">--Select Season--</option>
+             </select>
+
+         </div>
+                            <h5 ng-if='price'>${{price}}</h5>
+                             <button type="button" class="btn btn-default btn_lgn crt_set"><a ng-click="buy(score._id)">Buy Now</a></button>
+                            	</div>
+                    	</div>
+                  
+                        
+                	</div>
+                    
+                    <div class="tv_wrp" ng-if="data">
+                	<div class="col-sm-3" ng-repeat="mov in data.video">
+                    	<div class="tv_lyer">
+                        	<img src="{{mov.thumbnail}}">
+                              <a href="/movie_detail/{{mov._id}}" class="actr_ovrly">
+                            	</a>
+                            </div>
+                            <div class="ordr_dtl">
+                            <h4>{{mov.title}}</h4>
+                            <h5>${{mov.price}}</h5>
+                             <button type="button" class="btn btn-default btn_lgn crt_set"><a ng-click="buy(mov._id)">Buy Now</a></button>
+                            	</div>
+                    	</div>
+                        <div class="col-sm-3" ng-repeat="mov in data.serials">
+                    	<div class="tv_lyer">
+                        	<img src="{{mov.thumbnail}}">
+                              <a href="/episode_detail/{{mov._id}}" class="actr_ovrly">
+                            	</a>
+                            </div>
+                            <div class="ordr_dtl">
+                            <h4>{{mov.title}}</h4>
+                          <div class="head_tv tv_cnt">
+             <select ng-model="score"   ng-change="viewseason(score)" ng-options="score as score.season_name for score in  season" ng-selected="selected" style="cursor: pointer" id="tvsession">
+            <option value="">--Select Season--</option>
+             </select>
+
+         </div>
+                            <h5 ng-if='price'>${{price}}</h5>
+                             <button type="button" class="btn btn-default btn_lgn crt_set"><a ng-click="buy(score._id)">Buy Now</a></button>
+                            	</div>
+                    	</div>
+                  
+                        
+                	</div>
+                    
+                    
+            	</div>
+        	</div>
+      <button type="submit" ng-if="loadmore===1 || loadmoree===1" class="btn btn-default sub_falt flt_gap" ng-click="loads()">Load More</button>
+
+            
+    	</div>
+	</div>
+
+
+  <!--main-cover-end--->

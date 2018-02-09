@@ -1,0 +1,123 @@
+
+    <!--<button type="submit" value="Confirm and Pay now with Paypal account or with debit/credit card">Confirm and Pay now with Paypal account or with debit/credit card</button>--> 
+<div class="billing-address" ng-controller="BillingCtrl">
+<div class="container">
+<div class="row">
+    <div class="edit">
+<div class="col-sm-12">
+<h3 class="profile-txt">Your Order is :</h3>
+</div>
+
+</div>
+    <div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="edit_form order_billing">
+   
+    <form>
+    <div class="input-group">
+        <label for="inputEmail3" class="col-sm-3 control-label">Item ID :</label>
+        <div class="col-sm-9">
+            <label>{{ordered._id}}</label>
+            <!--<input type="text" class="form-control" ng-model='ordered._id' name='movieorepiid' readonly>-->
+        </div>
+        </div>
+        <div class="input-group" ng-if='ordered.title'>
+             <label for="inputEmail3" class="col-sm-3 control-label">Item_Name:</label>
+          <div class="col-sm-9">
+              <label>{{ordered.title}}</label>
+              <!--<input type="text" class="form-control" ng-model='ordered.title' name='movieorepiname' readonly>-->
+          </div>
+          </div>
+        
+        <div class="input-group" ng-if='!ordered.title'>
+             <label for="inputEmail3" class="col-sm-3 control-label">Item_Name:</label>
+             
+          <div class="col-sm-9">
+              <label>{{ordered.season_name}}</label>
+              <!--<input type="text" class="form-control" ng-model='ordered.season_name' name='movieorepiname' readonly>-->
+          </div>
+          </div>
+        
+        <div class="input-group">
+             <label for="inputEmail3" class="col-sm-3 control-label">Price:</label>
+            <div class="col-sm-9" id="pp">
+                <label>{{ordered.price}}</label>
+                <!--<input type="text" id="price" class="form-control" ng-model='ordered.price' name='price' value="{{ordered.price}}" readonly>-->
+            </div>
+        </div>
+        
+        <div class="input-group">
+             <label for="inputEmail3" class="col-sm-3 control-label">Quantity:</label>
+        <div class="col-sm-9"><input type="number" id="quan" class="form-control" ng-model='billing.quantity' name='quantity' placeholder="Quantity"  required="">
+        </div>
+        </div>
+        
+         <div class="input-group">
+              <label for="inputEmail3" class="col-sm-3 control-label">Total_Cost:</label>          
+        <div class="col-sm-9">
+            <label>{{ordered.price*1 * billing.quantity*1}}</label>
+            <!--<input type="text"   class="form-control"  ng-model='ordered.price*1 * billing.quantity*1' name='totalprice' placeholder="Total Price" readonly>-->
+        </div>
+        </div>
+</form>
+</div>
+<form action="http://rakesh.crystalbiltech.com/braintree_order/public_html/" method="post">
+     <input type="hidden" name="cmd" value="_xclick">
+     <input type="hidden" name="landing_page" value="billing">
+     <input type="hidden" name="custom" value="{{ordered._id}},Card">
+     <input ng-if="ordered.title" type="hidden"  name="item_name" value="{{ordered.title}}">
+       <input ng-if="!ordered.title" type="hidden"  name="item_name" value="{{ordered.season_name}}">
+    <input type="hidden" name="amount" value="{{ordered.price*1 * billing.quantity*1}}"> 
+    <input type="hidden" name="currency_code" value="USD">
+<!--    <input type="hidden" name="cancel_return" value="http://localhost:3000/">
+    <input type="hidden" name="return" value="http://localhost:3000/billstatus">-->
+  
+<div class="profile-btn text_center">
+  <!--<button type="button" class="btn btn-primary btn-block">PAYMENT</button></div>-->
+<button type="submit" ng-if="billing.quantity" class="btn btn-primary cnt_blks " value="PAY via Credit or Debit Card">PAY via Credit or Debit Card</button> 
+</div>
+</form>
+<!--<h3 class="profile-txt txt_or">or</h3>-->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+     <input type="hidden" name="cmd" value="_xclick">
+     <input type="hidden" name="business" value="Springtv@mail.com">
+     <input type="hidden" name="custom" value="{{ordered._id}},PayPal">
+     <input ng-if="ordered.title" type="hidden"  name="item_name" value="{{ordered.title}}">
+       <input ng-if="!ordered.title" type="hidden"  name="item_name" value="{{ordered.season_name}}">
+    <input type="hidden" name="amount" value="{{ordered.price*1 * billing.quantity*1}}"> 
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="cancel_return" value="https://www.springtv.it/">
+    <input type="hidden" name="return" value="https://www.springtv.it/billstatus">
+<div class="profile-btn text_center">
+  <!--<button type="button" class="btn btn-primary btn-block">PAYMENT</button></div>-->
+<button type="submit" ng-if="billing.quantity" class="btn btn-primary cnt_blks" value="PAY via PayPal Account">PAY via PayPal Account</button> 
+</div>
+</form>
+
+
+<form action="http://rakesh.crystalbiltech.com/bitcoin_order/" method="post">
+     <input type="hidden" name="cmd" value="_xclick">
+     <input type="hidden" name="landing_page" value="billing">
+     <input type="hidden" name="custom" value="{{ordered._id}},Bitcoin">
+     <input ng-if="ordered.title" type="hidden"  name="item_name" value="{{ordered.title}}">
+       <input ng-if="!ordered.title" type="hidden"  name="item_name" value="{{ordered.season_name}}">
+    <input type="hidden" name="amount" value="{{ordered.price*1 * billing.quantity*1}}"> 
+    <input type="hidden" name="currency_code" value="USD">
+<!--    <input type="hidden" name="cancel_return" value="http://localhost:3000/">
+    <input type="hidden" name="return" value="http://localhost:3000/billstatus">-->
+  
+<div class="profile-btn text_center">
+  <!--<button type="button" class="btn btn-primary btn-block">PAYMENT</button></div>-->
+<button type="submit" ng-if="billing.quantity" class="btn btn-primary cnt_blks " value="PAY via Bitcoin">PAY via Bitcoin</button> 
+</div>
+</form>
+
+</div>
+    
+    
+    
+    </div>
+
+    
+    </div></div>
+    

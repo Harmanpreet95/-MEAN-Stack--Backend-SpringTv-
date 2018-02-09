@@ -1,0 +1,52 @@
+ <div class="billing-address">
+<div class="container">
+<div class="row">
+    <div class="edit">
+<div class="col-sm-12">
+<h3 class="profile-txt">Your Selected Plan is :</h3>
+</div>
+
+</div>
+   <div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="edit_form order_billing">
+     <form>
+    <div class="input-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Plan ID:</label>
+ <div class="col-sm-10"><label>{{splan._id}}</label>
+</div>
+        </div>
+<!--<div class="input-group">
+  <input type="text" class="form-control" ng-model='currentUser._id' name='movieorepiname' value="readonly">
+</div>-->
+<div class="input-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Price:</label>
+<div class="col-sm-10"><label>{{splan.price}}</label>
+    </div>
+     </div>
+ </form>
+ </div>
+     </div>
+        </div>
+     
+    
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+     <input type="hidden" name="cmd" value="_xclick">
+     <input type="hidden" name="business" value="Springtv@mail.com">
+     <input type="hidden" name="custom" value="{{splan._id}}">
+      <input type="hidden" name="item_name" value="{{splan.title}}">
+    <input type="hidden" name="amount" value="{{splan.price}}"> 
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="cancel_return" value="https://www.springtv.it/paystatus">
+    <input type="hidden" name="return" value="https://www.springtv.it/paystatus">
+       <!--<input type="hidden" name="return" value="http://localhost:3000/paystatus">-->  
+   
+    
+    <div class="profile-btn text_center">
+    <button type="submit"  class="btn btn-primary " value="Confirm and Pay now with Paypal account or with debit/credit card">Pay now with Paypal account</button>  
+   </div>
+</form>
+     </div>
+      </div>
+     </div>
+   

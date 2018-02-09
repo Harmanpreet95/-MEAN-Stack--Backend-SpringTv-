@@ -1,0 +1,37 @@
+
+
+<!-- --------actor details------------ -->
+<div class="details">
+<div class="container">
+<div class="row">
+<div class="detailssctn">
+<div class="col-sm-3">
+<div class="actor-bx">
+<img class="actr-dtl" src="{{actor[0].image}}" width="150px">
+</div>
+ </div>
+ <div class="col-sm-9">
+<h2>{{actor[0].name}}</h2>
+<h1>  About Me</h1>
+<p>{{actor[0].description}}
+</p>
+ </div></div>
+
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="actrmvy">
+<h6><b>MOVIES</b></h6>
+</div>
+</div></div>
+<div class="tv_wrp">
+<div class="col-sm-4" ng-repeat="actors in actor">
+    <div class="actrmovie" >
+ 
+<img class="mvi" src="{{actors.movie_thumb}}" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" ng-click="go(actors.movie_id)" width="150px">
+<!--ng-click="go(post._id)"-->
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,115 @@
+<!-----------------form-section----------------------->   
+<!--(304) 381-1202-->
+<div class="sign_in">
+	<div class="container">
+    	<div class="row">
+            <div class="form-group ">
+               <p ng-show="message" class="alert alert-success">{{message}}</p>
+            </div>
+            <div class="form-group ">
+               <p ng-show="errormsg" class="alert alert-danger">{{errormsg}}</p>
+            </div>
+        <div class="signin_heading">
+            <h3>Login to Spring TV</h3>
+            <P>Enter details to sign in </P>
+            	</div>
+        	<div class="col-sm-offset-4 col-sm-4">
+            	<div class="tab_mn">
+                <div id="exTab1" class="container tb_lt">	
+<ul  class="nav nav-pills">
+			<li class="active">
+                        <a  href="#emailtab" data-toggle="tab" id="tab_register_email" class="active">Email</a>
+			</li>
+			<li>
+                            <a href="#phonetab" id="tab_register_mobile" data-toggle="tab" class="">Mobile</a>
+			</li>
+		</ul>
+
+			<div class="tab-content clearfix back_trns">
+			  <div class="tab-pane active" id="emailtab">
+         <form method="post"  ng-submit="loginUser(user)">
+  <div class="form-group">
+    <input type="email" class="form-control ctrl_fm1" ng-model='user.email' name='email' id="email" placeholder="Email Address">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control ctrl_fm1" ng-model='user.password' name='password' id="pwd" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default sub_falt">Sign in</button>
+</form> 
+ <div class="have_acnt">
+               	<span>Don't have an account?<a href="/">Click here to signup</a></span>
+                <span>Forgot Password?<a href="/forgotpassword">Click here to reset</a></span>
+	             </div>
+                 
+                 <div class="fb_lgin">
+                 	<h3>OR</h3>
+                        <a href="/auth/facebook"><img src="/home/img/fb_btn.jpg"></a>
+                 </div>
+                 
+				</div>
+				<div class="tab-pane" id="phonetab">
+          <form method="post"  ng-submit="mobileLogin(user)">
+  <div class="form-group">
+    <input type="number" class="form-control ctrl_fm1" ng-model='user.phone' id="email" placeholder="Mobile number">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control ctrl_fm1" ng-model='user.password' id="pwd" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default sub_falt" data-toggle="modal" >Sign in</button>
+</form> 
+                                    
+                                    
+      
+<!--  --------------modal----------------->
+
+<!--   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+   
+      <div class="modal-content">
+        <div class="modal-body">
+
+<div class="mdl-frm">
+ <form method="post" ng-submit="otplogin(user)">
+  <div class="form-group">
+      <input type="number" class="form-control ctrl_fm" id="email" placeholder="Mobile Number" required="required" style="color:#878686;"  >
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control ctrl_fm" id="otp" ng-model='user.otp' placeholder="OTP" style="color:#878686;" required="required">
+    <input type="hidden" class="form-control ctrl_fm" id="password" ng-model='user.password' style="color:#878686;">
+  </div>
+  <button type="submit" class="btn btn-default sub_falt" >Sign Up</button>
+ </form>
+
+        <div class="modal-footer">
+       <button type="submit" class="btn btn-default sub_falt">Send OTP</button>
+        </div>
+ </form>
+</div>
+        </div>
+      
+    </div>
+    </div></div>                                -->
+                                    
+                                    
+                                    
+                                    
+              <div class="have_acnt">
+               	<span>Don't have an account?<a href="#">Click here to signup</a></span>
+                <span>Forgot Password?<a href="#">Click here to reset</a></span>
+	             </div>
+                 
+                 <div class="fb_lgin">
+                 	<h3>OR</h3>
+                        <a href="/auth/facebook"><img src="/home/img/fb_btn.jpg"></a>
+                 </div>
+				</div>
+			</div>
+         </div>
+       </div>
+
+          </div>
+    	</div>
+	</div>
+  </div>
+

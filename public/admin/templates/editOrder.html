@@ -1,0 +1,79 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Orders
+            <small>Edit Order</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/orderList"><i class="fa fa-dashboard"></i> Orders</a></li>
+            <li class="active">Edit Order</li>
+        </ol>
+    </section>
+    <section class="content">
+
+
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Edit Order</h3>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-success" ng-show="update">
+                            <strong ng-bind="update" >{{update}}</strong> 
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+<form>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Movie/Episode Name</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.movie_name' readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Movie/Episode Id</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.movie_id' readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Ouantity</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.quantity' readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Transaction Id</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.transactionid' readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Price</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.movie_price'readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">User Id</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.userid' readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Status</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.status' required="" placeholder="status of the payment">
+                            </div>
+                          <div class="form-group" ng-if="order.status==='Confirmed'">
+                                <label for="exampleInputPassword1">Delivery Status</label>
+                                <input type="text" class="form-control" name='name' ng-model='order.d_status' required="" placeholder="status of the payment">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type='hidden' placeholder='blog' ng-model='order.id' name='id' class='form-control'><p>(Please use the words Pending or Confirmed)</p>
+                            
+                       </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class='btn btn-success pull-left update' ng-click='editPost()'>Update Status of Order Payment</div>                  
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

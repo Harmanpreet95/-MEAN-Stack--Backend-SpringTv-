@@ -1,0 +1,187 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Serials
+            <small>List</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Serials</a></li>
+            <li class="active">Serials List</li>
+        </ol>
+    </section>
+    <div class="form-group">
+        <div class="alert alert-success" ng-show="del">
+            <strong ng-bind="del" ></strong> 
+        </div>
+    </div>
+
+
+        <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+
+
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Serials List</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        
+                            <span id="mydiv">
+                                <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                            </span>
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sr. no</th>
+                                    <th>Title</th>
+                                    <th>Thumbnail</th>
+                                    <th>Description</th>
+                                    <th>Created</th>
+                                    <th>Seasons</th>
+                                    <th>Episodes</th>
+                                    <th>Edit</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat='post in posts track by $index'>
+
+                                    <td ng-class="'{{post._id}}'">{{$index+1}}</td>           
+                                    <td ng-class="'{{post._id}}'">{{post.title}}</td>                                   
+                                    <td ng-class="'{{post._id}}'">
+                                        <img style="width:120px;" src="{{post.thumbnail}}">
+                                    </td>
+                                    <td ng-class="'{{post._id}}'">{{post.description.substr(0, 140)}}</td>
+                                    <td ng-class="'{{post._id}}'">{{post.created_at | date}}</td> 
+                                    <td ng-class="'{{post._id}}'">
+                                        <a style=" color:#3C8DBC;"  ui-sref="addSeason({id:post._id})">Add Seasons</a>
+                                    </td> 
+                                    <td ng-class="'{{post._id}}'">
+                                        <a style=" color:#3C8DBC;"  ui-sref="addEpisode({ids:post._id,name:post.title})">Add Episodes</a>
+                                    </td> 
+                                    <td ng-class="'{{post._id}}'">
+                                        <a ui-sref="editSerial({paraml:post._id})">
+                                            <i class="fa fa-edit"></i>Edit</a></td>  
+
+                                    <td ng-class="'{{post._id}}'" ng-click='setActive(post)' style="cursor: pointer">
+
+                                        View</td> 
+                                    <td ng-click="deletepost(post._id)" ng-class="'{{post._id}}'" style="cursor: pointer">
+
+                                        Delete</td>  
+
+                                </tr>   
+
+                            </tbody>
+<!--                            <tfoot>
+                                 <tr>
+                                    <th>Sr. no</th>
+                                    <th>Title</th>
+                                    <th>Param</th>
+                                    <th>Description</th>
+                                    <th>Created</th>
+                                    <th>Edit</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </tfoot>-->
+                        </table>
+                    </div>
+
+
+<!--                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing {{vm.pager.startIndex+1}} to {{vm.pager.endIndex+1}} of {{vm.pager.totalItems}} entries</div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                             
+                                <ul ng-if="vm.pager.pages.length" class="pagination" ng-include='"/admin/templates/element/pagination.html"'>
+                                    
+                                </ul>
+
+                             
+
+
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <div class='col-sm-8 full-height'>
+                        <div ng-show="active == true">
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Single data</h3>
+
+
+                                        </div>
+                                   
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th>Fields</th>
+                                                    <th>Data</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Title</td>
+                                                    <td>{{activePost.title}}</td>
+                                                </tr>
+                                               
+                                                <tr>
+                                                    <td>Description</td>
+                                                    <td>{{activePost.description}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Thumbnail</td>
+                                                    <td><img src="{{activePost.thumbnail}}" style="width:150px;"></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>Trailer</td>
+                                                    <td>
+                                            <video width="300" height="200" controls ng-src="{{trailersrc(activePost.trailer)}}">
+                                                            Your browser does not support the video tag.
+                                            </video></td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </div>
+                                    
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+
+
+
+
+
+
+
+    
+
+</div>

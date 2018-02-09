@@ -1,0 +1,81 @@
+<div class="account" ng-controller="MyaccountCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="edit">
+                <div class="col-sm-12">
+                    <h3 class="account-txt">My account</h3>
+                </div>
+                <div class="col-sm-12">
+
+                    <div class="account-profile">
+                        <img class="profile-img" ng-src="{{currentUser.image}}"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="grid-acnt">
+            <div class="row">
+                <div class="account-page">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="account-page">
+                            <div class="col-sm-6 col-xs-6">
+                                <label class="usr_nm">User Name :</label>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{currentUser.username}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="account-page">
+                            <div class="col-sm-6 col-xs-6">
+                                <label class="usr_nm">Email :</label>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{currentUser.email}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="account-page">
+                            <div class="col-sm-6 col-xs-6">
+                                <label class="usr_nm">Phone :</label>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="name">
+                                    <span class="nme_clnt">{{currentUser.phone}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="account-page">
+                            <div class="col-sm-6 col-xs-6">
+                                <label class="usr_nm">Activated Plan :</label>
+                            </div>
+                             <div class="col-sm-6 col-xs-6" ng-if="plan===0">
+                                <div class="name">
+                                    <span class="nme_clnt">No Subscription Plan is Activated</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-6" ng-if="plan===1">
+                                <div class="name">
+                                    <span class="nme_clnt">{{plantitle}} valid till {{lastday|date}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="account-btn">
+                        <a href="/editprofile" class="btn btn-primary btn-block">EDIT PROFILE</a>
+                    </div>
+    </div>   

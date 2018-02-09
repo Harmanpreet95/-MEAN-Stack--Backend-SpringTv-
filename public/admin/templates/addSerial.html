@@ -1,0 +1,154 @@
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Serial
+            <small>Add Serial</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/userList"><i class="fa fa-dashboard"></i> Serial</a></li>
+            <li class="active">Add Serial</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-11">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Serial</h3>
+                    </div>
+                        <div class="form-group">
+                        <div class="alert alert-success" ng-show="message">
+                            <strong ng-bind="message" ></strong> 
+                        </div>
+                    </div>
+                    <form method="post"  ng-submit="addSerial(serial)">
+                        <div class="box-body">
+                            
+                            
+                            <div class='col-lg-8'>
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Title</label>
+                                    <input type='text' placeholder='Title of serial' ng-model='serial.title' required="" name='title' class='form-control'>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Description</label>
+                                    <textarea required="" class="form-control full-height" id="pad" ng-model='serial.description' name="description" placeholder='Description of serial'></textarea>
+                                    <div class="col-md-6 full-height" id="markdown">
+                                        <div btf-markdown='post.description'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Thumbnail</label> <br>                 
+                                    <img  ng-src="{{thumbb}}" id="photo-id"  width="150px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().thumbnail(this)" id="photo-upload"/>
+                                   
+                                    <p ng-show="loadingthumb">...UPLOADING...</p>
+                                </div>
+                              
+                      
+                            </div>
+                            
+                    <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Trailer</label>  
+                    <video width="320" height="240" ng-if ="trailer != ''" controls ng-src="{{trustSrc(trailer)}}">
+                              Your browser does not support the video tag.
+                        </video>
+                    <input type="file" name="file" onchange="angular.element(this).scope().trailerupload(this)" id="photo-upload"/>
+                                    <p ng-show="loadingtrail">...UPLOADING...</p>
+                                </div>
+                    </div>
+                            
+<!--                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Choose Category</label><br>
+                                        <input type="checkbox" name="vehicle" value="Bike">African
+                                        <input type="checkbox" name="vehicle" value="Car">Italian
+                                </div>
+                            </div> 
+                            
+                            
+                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Type</label><br>
+                                    <select>
+                                      <option value="--Select Type of Movie--">--Select Type of Movie--</option>
+                                      <option value="saab">Comedy Movies</option>
+                                      <option value="mercedes">Love Movies</option>
+                                      <option value="audi">Epic Movies</option>
+                                      <option value="audi">Family Movies</option>
+                                    </select>
+                                </div>
+                            </div>    
+                            
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Movie</label>  
+                                        <video id="video-element" controls ng-show = "loadingv == false">
+                                            <source type="video/mp4" ng-src="{{videoshow}}">
+                                        </video>
+                                    <div>
+                                        {{vid}}
+      <div id="content" style="overflow:hidden; height:300px; width:100%;">
+      <video  width="400" id="myVideo" class="video-js vjs-default-skin"  preload="auto" data-setup="{}" controls autoplay ng-show="loadingv == false">
+          <source id = "video" src="{{vid}}" type="video/mp4">
+      </video>
+     </div> 
+           <video width="400" controls>
+   <source id = "video" src="{{vid}}">
+</video>                      
+                                
+                                   
+                    <input type="file" name="file" onchange="angular.element(this).scope().fileNameChanged(this)" id="photo-upload"/>
+                                    <p ng-show="loadingv">...UPLOADING...</p>
+                                </div>
+                            </div>
+                            -->
+                            
+                            
+                            
+                            
+                            
+                            
+<!--                           <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Actors</label> <br>                 
+                                    <img  ng-src="{{imgshow}}" id="photo-id"  width="150px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().actors(this)" id="photo-upload"/>
+                                   
+                                    <p ng-show="loadinga">...UPLOADING...</p>
+                                </div>
+                               <button ng-hide = "addmore == true" type='button' class="add_more" ng-click="add()">Add More Files</button>
+                               <div class="form-group" ng-show = "addmore == true">  <br>        
+                                    <img  ng-src="{{actor1}}" id="photo-id"  width="150px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().actorsec(this)" id="photo-upload"/>
+                                   
+                                    <p ng-show="loadingb">...UPLOADING...</p>
+                                    </div>
+                            </div>-->
+             
+                            <div class="col-lg-8">
+                                    <span id="mydiv">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                <input type="submit" value="Add Serial" name="submit" class="btn btn-success pull-left update">                               
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

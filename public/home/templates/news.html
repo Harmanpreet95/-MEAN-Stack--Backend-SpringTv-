@@ -1,0 +1,128 @@
+<div class="news">   
+<div class="container">
+    <h3>News</h3>
+<div class="news-border brdr_gap">
+<div class="spring-news" ng-repeat="new in news">
+<img src="home/img/news-bg.jpg" alt="" class="news-bg">
+<div class="news-part1">
+
+<div class="row">
+<div class="col-sm-3">
+
+<div class="actrs"><img src="{{new.image}}"/></div>
+</div>
+<div class="col-sm-7">
+<div class="news-header">
+<h2>{{new.title}}</h2>
+<p class="news-detail">
+    {{new.description.substr(0,250)}}....<a ng-click="detail(new._id)">Read full news</a>
+</p>
+<!--<p class="news-detail">not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. </p>-->
+</div>
+</div>
+<div class="col-sm-2">
+<div class="news-publish"><h6>Posted Date : {{new.created_at|date}} </h6></div>
+
+</div>
+</div>
+</div>
+</div>
+<!--<div class="spring-news">
+<img src="home/img/news-bg.jpg" alt="" class="news-bg">
+<div class="news-part1">
+
+<div class="row">
+<div class="col-sm-3">
+
+<div class="actrs"><img src="home/img/actr2.png"/></div>
+</div>
+<div class="col-sm-7">
+<div class="news-header">
+<h2>HEADING</h2>
+<p class="news-detail">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+ when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+ It has survived not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. 
+</p>
+<p class="news-detail">not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. </p>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="news-publish"><h6>Posted Date : 9-22-2012 </h6></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="spring-news">
+<img src="home/img/news-bg.jpg" alt="" class="news-bg">
+<div class="news-part1">
+
+<div class="row">
+<div class="col-sm-3">
+
+<div class="actrs"><img src="home/img/actr1.png"/></div>
+</div>
+<div class="col-sm-7">
+<div class="news-header">
+<h2>HEADING</h2>
+<p class="news-detail">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+ when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+ It has survived not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. 
+</p>
+<p class="news-detail">not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. </p>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="news-publish"><h6>Posted Date : 9-22-2012 </h6></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="spring-news">
+<img src="home/img/news-bg.jpg" alt="" class="news-bg">
+<div class="news-part1">
+
+<div class="row">
+<div class="col-sm-3">
+
+<div class="actrs"><img src="home/img/actr2.png"/></div>
+</div>
+<div class="col-sm-7">
+<div class="news-header">
+<h2>HEADING</h2>
+<p class="news-detail">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+ when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+ It has survived not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. 
+</p>
+<p class="news-detail">not only five centuries, but also the leap into electronic typesetting, 
+ remaining essentially unchanged. </p>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="news-publish"><h6>Posted Date : 9-22-2012 </h6></div>
+
+</div>
+</div>
+</div>
+</div>-->
+<div class="row">
+<div class="col-sm-12">
+<div class="news-btn">
+  <button type="button" ng-if="loadmore===1" class="btn btn-primary btn-block" ng-click="loads()">Load more</button></div>
+</div></div>
+</div>
+</div>
+</div>

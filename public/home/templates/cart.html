@@ -1,0 +1,106 @@
+<!--<ol class="breadcrumb brd_set">
+    <li><a href="/">Home</a></li>
+    <li class="active">My Orders</li>        
+  </ol>-->
+<!------------cart-section------------->
+<div class="cart_section section_hght" style="min-height: 525px;">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-sm-12">
+            <h3 class="crt_cnt">My Orders</h3>
+            <!--<div class="table-responsive tbl_rsp">          
+  <table class="table tbl_crt">
+    <thead style="background: #f1f1f3 ;width: 100%;">
+      <tr>
+        <th class="ct_brdr">ITEM (S)</th>
+        <th class="ct_brdr">QTY</th>
+        <th class="ct_brdr">PRICE</th>
+        <th class="ct_brdr">DELIVERY DETAILS</th>
+        <th class="ct_brdr">SUBTOTAL</th>
+        <th class="ct_brdr">REMOVE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style= "border-bottom: 1px solid #e6e4e4;">
+        <td style="width: 505px;">
+        <div class="item_crt">
+        	<img src="images/team1.jpg">
+        	</div>
+         <div class="item_cntnt">
+         <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h3>
+         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+         	</div>
+        </td>
+        <td>
+        <div class="epi_facon">
+        <ul>
+        <li><i class="fa fa-plus" aria-hidden="true"></i></li>
+        <li><span class="numb_one">1</span></li>
+        <li><i class="fa fa-minus" aria-hidden="true"></i></li>
+        </ul>
+        </div>
+        </td>
+        <td>$12.00</td>
+        <td>
+        <h4 class="fre_epi">Free</h4>
+        <span class="busi_epi">Delivery in 7-8 business days</span>
+        </td>
+        <td style="text-align:center;">$12.00</td>
+        <td style="text-align:center;"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+      </tr>
+
+    </tbody>
+  </table>
+             </div>-->
+             
+      <table class="table">
+     <thead style="background: #f1f1f3 ;">
+      <tr>
+          
+        <th scope="col" class="ct_brdr">ITEM (S)</th>
+        <th scope="col" class="ct_brdr">QUANTITY</th>
+        <!--<th scope="col" class="ct_brdr">PRICE</th>-->
+        <th scope="col" class="ct_brdr">TRANSACTION ID</th>
+        <th scope="col" class="ct_brdr">PAYMENT STATUS</th>
+        <th scope="col" class="ct_brdr">ORDERED ON</th>
+        <th scope="col" class="ct_brdr">DELIVERY DETAILS</th>
+        <th scope="col" class="ct_brdr">SUBTOTAL</th>
+<!--        <th scope="col" class="ct_brdr">REMOVE</th>-->
+      </tr>
+    </thead>
+    <tbody>
+  <tr ng-repeat="order in my_order track by $index" style= "border-bottom: 1px solid #e6e4e4;">
+        <td class="ct_brdr" data-label="ITEM (S)">
+<!--       <div class="item_crt"> 
+           
+           	<img src="{{image[$index]}}">
+        	</div>-->
+        <div class="item_cntnt">
+         <h3>{{order.movie_name}}</h3>
+         	</div>
+        </td>
+        <td class="ct_brdr qty_tble" data-label="QUANTITY" >{{order.quantity}}</td>
+        <!--<td class="ct_brdr" data-label="PRICE">$12.00</td>-->
+        <td class="ct_brdr" data-label="TRANSACTION ID">{{order.transactionid}}</td>
+        <td class="ct_brdr" data-label="PAYMENT STATUS">{{order.status}}</td>
+        <td class="ct_brdr" data-label="ORDERED ON">{{order.created_at|date}}</td>
+        <td class="ct_brdr" data-label="DELIVERY DETAILS">
+<!--        <h4 class="fre_epi">Free</h4>-->
+         <span class="busi_epi" ng-if="order.status!=='Confirmed'">Please wait for your Payment Status to be Confirmed</span>
+        <span class="busi_epi" ng-if="order.status==='Confirmed'">{{order.d_status}}</span>
+        </td>
+        <td class="ct_brdr" data-label="SUBTOTAL" style="text-align:center;">{{order.movie_price}}</td>
+<!--        <td class="ct_brdr" data-label="REMOVE" style="text-align:center;"><i class="fa fa-trash-o" aria-hidden="true"></i></td>-->
+      </tr>
+
+  </tbody>
+</table>       
+             
+             
+             
+          </div>
+      </div>
+   </div>
+</div>
+
+<!------------cart-section-end------------>

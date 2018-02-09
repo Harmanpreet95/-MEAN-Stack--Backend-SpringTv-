@@ -1,0 +1,117 @@
+<div class="slct_pln">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-offset-2 col-sm-8">
+                <div class="slct_sbscbe">
+                    <div id="exTab1" class="container sbcrbe_page">	
+                        <ul  class="nav nav-pills pils_zro">
+                            <li class="active">
+                                <a href="#1a" data-toggle="tab" class="nav_sign">1.Signup</a>
+                            </li>
+                            <li class="sss"><a href="#2a" data-toggle="tab" class="nav_sign">2.Select Plan</a>
+                            </li>
+                            <li class="rrr" id="eee"><a href="#3a" data-toggle="tab" class="nav_sign">3.Subscribe Plan</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-content clearfix clr_trans" style="min-height: 450px">
+                            <div class="tab-pane active" id="1a">
+                                <p class="desc_in">Success! Your account email address is {{currentUser.email}}. Use this to login on the website and app. Select a plan and subscribe to start watching.</p>
+                            </div>
+                            <div class="tab-pane" id="2a">
+                                <div class="plan_2" >
+                                    <div class="col-sm-12" ng-repeat="plan in plans">
+                                        <div class="valu_pln" id="plan{{plan._id}}" ng-click="selected(plan._id)" >
+                                            <div class="col-sm-5">
+                                                <div class="mnth_covr">
+                                                    <h4>{{plan.days}} Days Plan</h4>
+                                                    <span>Best Value</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-7">
+                                                <div class="mnth_end">
+                                                    <h4>{{plan.price}} USD /{{plan.days}} Days</h4>
+                                                    <span>{{d|date}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" id="select" class="btn btn-default sub_falt flt_sb">Next</button>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="3a">
+                                <div class="third_pln">
+                                    <div class="crd_desc">
+                                        <h5>Selected Plan is :</h5>
+                                        <p>Plan Name : {{selectedplan.title}}</p>
+                                        <p>Plan Price : {{selectedplan.price}} USD</p>
+                                        <p>Plan Validity : {{selectedplan.days}}</p>
+                                    </div>
+
+<!--                                    <div class="col-sm-12">
+                                        <div class="thrd_crd">
+                                            <div class="col-sm-6">
+                                                <a href="/payment/{{selectedplan._id}}"><img src="/home/img/pay_now.jpg" ng-click="pay()" ></a>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                   <div class="col-sm-12">
+            	<div class="thrd_crd">
+                	<div class="col-sm-4" style="padding-left:7px;">
+                         <div class="pay_mstr">
+                         <a href="/payment_1/{{selectedplan._id}}"><img src="home/img/mstr.png"></a>
+                         	</div>
+                    	</div>
+                        <div class="col-sm-4">
+                         <div class="pay_mstr">
+                         <a href="/payment/{{selectedplan._id}}"><img src="home/img/pay_pal.png" ng-click="pay()"></a>
+                         	</div>
+                    	</div>
+                    <div class="col-sm-4" style="padding-left:7px;">
+                         <div class="pay_mstr">
+                         <a href="/payment_bitcoin/{{selectedplan._id}}"><img src="home/img/bitcoin.png"></a>
+                         	</div>
+                    	</div>
+                	</div>
+            	</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/home/js/jquery-1.11.3.min.js"></script>
+
+<script>
+
+
+                                                    $(document).ready(function() {
+                                                        $(".valu_pln").click(function() {
+                                                            var id = $(this).attr("id");
+                                                            $(".valu_pln").removeClass("vlu_chn");
+                                                            $("#" + id).addClass("vlu_chn");
+                                                        });
+                                                        $(".sub_falt").click(function() {
+                                                            var id = $(".rrr").attr("id");
+                                                            $(".sss").removeClass("active");
+                                                            $("#2a").removeClass("active");
+                                                            $(".rrr").addClass("active");
+
+                                                            $("#" + id).trigger("click");
+                                                        });
+                                                    });
+                                                    $("#eee").click(function() {
+                                                        $("#3a").addClass("active");
+                                                    });
+</script>

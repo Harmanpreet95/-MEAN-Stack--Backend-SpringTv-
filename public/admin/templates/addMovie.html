@@ -1,0 +1,185 @@
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Movie
+            <small>Add Movie</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/userList"><i class="fa fa-dashboard"></i> Post</a></li>
+            <li class="active">Add Movie</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-11">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Movie</h3>
+                    </div>
+                        <div class="form-group">
+                        <div class="alert alert-success" ng-show="message">
+                            <strong ng-bind="message" ></strong> 
+                        </div>
+                    </div>
+                    <form method="post"  ng-submit="addPost(post)">
+                        <div class="box-body">
+                        
+                            
+                            <div class='col-lg-8'>
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Title</label>
+                                    <input type='text' placeholder='Title of movie' ng-model='post.title' required="" name='title' class='form-control'>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Description</label>
+                                    <textarea required="" class="form-control full-height" id="pad" ng-model='post.description' name="description" placeholder='Description of movie'></textarea>
+<!--                                    <div class="col-md-6 full-height" id="markdown">
+                                        <div btf-markdown='post.description'></div>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Thumbnail</label> <br>                 
+                                    <img  ng-src="{{thumb}}" id="photo-id"  width="250px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().thumbnail(this)" id="photo-upload"/>
+                                    <span ng-show="loadingthumb">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                    <!--<p ng-show="loadingthumb">...UPLOADING...</p>-->
+                                </div>
+                              
+                      
+                            </div>
+                            
+                           <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                   <label for="exampleInputPassword1">Choose Category</label><br>
+                                <select ng-model="post.categoryname" ng-change="category()">
+                                    <option ng-repeat="allCategories in categorylist">{{allCategories.category}}</option>
+                                </select>
+                                </div>
+                            </div> 
+                            
+                            
+                            <div class="col-lg-8 full-height" ng-if = "catlength >= 0">
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Choose SubCategory</label><br>
+                                    <select  ng-model="post.subcatname" ng-change="subCategory()">
+                                        <option value="Select Category">Select Category</option>
+                                      <option value="{{allSubCategories.subcategory}}" ng-repeat="allSubCategories in subcategory">{{allSubCategories.subcategory}}</option>
+                                    </select>
+                                </div>
+                            </div>  
+                         
+                            
+                      
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Movie</label>  
+                        
+                        <video width="320" height="240" ng-if ="videoshow != ''" controls ng-src="{{trustSrc(videoshow)}}">
+                              Your browser does not support the video tag.
+                        </video>
+                    <input type="file" name="file" onchange="angular.element(this).scope().videoupload(this)" id="photo-upload"/>
+                                    <!--<p ng-show="loadingv">...UPLOADING...</p>-->
+                                    <span ng-show="loadingv">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Time duration of movie</label>  
+                        <input type='text' placeholder='Time duration of movie' ng-model='post.duration' required="" name='title' class='form-control'>
+                       
+                                </div>
+                            </div>
+                            
+                            <div class='col-lg-8'>
+                                <div class='form-group'>
+                                    <label for="exampleInputPassword1">Price</label>
+                                    <input type='number' placeholder='Price of movie' ng-model='post.price' required="" name='price' class='form-control'>
+                                </div>
+                            </div>
+                       
+                          
+                    <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Upload Trailer</label>  
+                    <video width="320" height="240" ng-if ="trailer != ''" controls ng-src="{{trustSrc(trailer)}}" >
+                              Your browser does not support the video tag.
+                        </video>
+                    <input type="file" name="file" onchange="angular.element(this).scope().trailerupload(this)" id="photo-upload"/>
+                                    <!--<p ng-show="loadingtrail">...UPLOADING...</p>-->
+                                    <span ng-show="loadingtrail">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                </div>
+                    </div>
+                                      
+           
+                    
+                            
+                           <div class='col-lg-8'>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Actors</label> <br>                 
+                                    <img  ng-src="{{imgshow}}" id="photo-id"  width="250px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().actors(this)" id="photo-upload" required=""/>
+                <input type="text" placeholder="Actor name" ng-model="post.actorname0" required="">   
+                <textarea required="" class="form-control full-height" id="pad" ng-model='post.description0' name="description" placeholder='Actor description'></textarea>
+                <div ng-if = "imgshow != ''" ng-click="upload(post.actorname0,post.description0)">
+                    <h5>Upload Actor</h5>
+                </div>
+                                    <span ng-show="loadinga">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                    <!--<p ng-show="loadinga">...UPLOADING...</p>-->
+                                </div>
+                            </div>
+                               
+                             <div class='col-lg-8'> 
+                               <button ng-hide = "addmore == true"  class="add_more" ng-click="add()">Add More Files</button>
+                               <div class="form-group" ng-show = "addmore == true">  <br>        
+                                    <img  ng-src="{{actor1}}" id="photo-id"  width="250px;"/>
+                <input type="file" name="file" multiple onchange="angular.element(this).scope().actorsec(this)" id="photo-upload" required=""/>
+                <input type="text" placeholder="Actor name" ng-model="post.actorname1" required=""> 
+                <textarea required="" class="form-control full-height" id="pad" ng-model='post.description1' name="description" placeholder='Actor description'></textarea>
+                <div ng-if = "actor1 != ''" ng-click="upload(post.actorname1,post.description1)">
+                    <h5>Upload Actor</h5>
+                </div>
+                                    <span ng-show="loadingb">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                               
+                                </div>
+                            </div>
+                            
+                            
+                            
+             
+                            <div class="col-lg-8">
+                                    <span id="mydiv">
+                                        <img class="ajax-loader" src="dist/img/loader.gif" style="/*! width: 50px; */">
+                                    </span>
+                                <input ng-if="trailer == '' || videoshow == '' || thumb == ''"  disabled type="submit" value="Add Movie" name="submit" class="btn btn-success pull-left update" >       
+                                <input ng-if="trailer != '' && videoshow != '' && thumb != ''"   type="submit" value="Add Movie" name="submit" class="btn btn-success pull-left update" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
